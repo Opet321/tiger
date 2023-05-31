@@ -1,5 +1,4 @@
 import asyncio
-import pyromod
 from io import BytesIO
 import io
 import os
@@ -17,7 +16,6 @@ from pyrogram import *
 from pyrogram import Client as ren
 from pyrogram import Client
 from pyrogram import Client as app
-from pyromod import *
 
 from TigerX import *
 from TigerX.lib import *
