@@ -2,8 +2,6 @@ import os
 import datetime
 from os import getenv
 from pyrogram import Client
-import pyromod
-from pyromod import *
 import asyncio
 import logging
 import sys
