@@ -80,7 +80,6 @@ pymongo==4.3.3
 pyparsing==3.0.9
 pyppeteer==1.0.2
 Pyrogram==2.0.102
-pyromod==1.1
 PySocks==1.7.1
 pytgcalls==3.0.0.dev24
 python-dateutil==2.8.2
