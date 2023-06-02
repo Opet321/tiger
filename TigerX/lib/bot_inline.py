@@ -88,7 +88,10 @@ async def on_plug_in_cb(_, callback_query):
         this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
     this_command += "© TigerX"
     bttn = [
-        [InlineKeyboardButton("Support", url=f"https://t.me/RendyProjects"),InlineKeyboardButton(text="Return", callback_data="reopen")],
+        [
+            InlineKeyboardButton("Support", url="https://t.me/RendyProjects"),
+            InlineKeyboardButton(text="Return", callback_data="reopen"),
+        ]
     ]
     reply_pop_up_alert = (
         this_command

@@ -12,7 +12,7 @@ from TigerX.lib import *
 from pykillerx import *
 from pykillerx.helper import *
 
-incorrect_parameters = f"Parameter Wrong, Type `.help locks`"
+incorrect_parameters = "Parameter Wrong, Type `.help locks`"
 data = {
     "msg": "can_send_messages",
     "stickers": "can_send_other_messages",
@@ -40,9 +40,9 @@ async def tg_lock(
         if perm not in permissions:
             return await message.edit_text(f"🔒 `{parameter}` **is already locked!**")
         permissions.remove(perm)
+    elif perm in permissions:
+        return await message.edit_text(f"🔓 `{parameter}` **is already Unlocked!**")
     else:
-        if perm in permissions:
-            return await message.edit_text(f"🔓 `{parameter}` **is already Unlocked!**")
         permissions.append(perm)
     permissions = {perm: True for perm in list(set(permissions))}
     try:
@@ -79,7 +79,7 @@ async def locks_all_or_unlock_all(client, message):
             parameter,
             permissions,
             data[parameter],
-            bool(state == "lock"),
+            state == "lock",
         )
     elif parameter == "all" and state == "lock":
         try:
@@ -120,8 +120,5 @@ async def locktypes(client, message):
     if not permissions:
         return await message.edit("🔒 **Everything is locked!**")
 
-    perms = ""
-    for i in permissions:
-        perms += f" • __**{i}**__\n"
-
+    perms = "".join(f" • __**{i}**__\n" for i in permissions)
     await message.edit_text(perms)

@@ -38,17 +38,12 @@ async def copy_message(client, message):
         return
     link_parts = link.split("/")
     try:
-        if len(link_parts) >= 2 and link_parts[-2]:
-            chat_id = link_parts[-2]
-        else:
-            chat_id = None
+        chat_id = link_parts[-2] if len(link_parts) >= 2 and link_parts[-2] else None
     except ValueError:
-        pass
         return
     message_id = int(link_parts[-1])
     try:
         await randydevhack(client, message, chat_id, message_id)
         await msg.delete()
     except Exception as e:
-        pass
         return

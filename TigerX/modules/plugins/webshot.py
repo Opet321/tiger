@@ -9,7 +9,5 @@ async def webshot_command(client: Client, message: Message):
 
 add_command_help(
     "webshot",
-    [
-        [f"webshot <link> or .ss <link>", "to screenshot the given web page"],
-    ],
+    [["webshot <link> or .ss <link>", "to screenshot the given web page"]],
 )

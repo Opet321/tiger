@@ -22,8 +22,5 @@ async def fuck_command(client: Client, message: Message):
 
 add_command_help(
     "ping",
-    [
-        [f"ping or .kping", "Check bot alive or not."],
-        ["fck", "Check fucking."],
-    ],
+    [["ping or .kping", "Check bot alive or not."], ["fck", "Check fucking."]],
 )

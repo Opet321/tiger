@@ -51,18 +51,16 @@ async def module_help(client, message):
                 f"```{str(ac)}```\n• © TigerX",
                 reply_to_message_id=ReplyCheck(message),
             )
-            await xx.reply(
-                f"**Usage:** `.help broadcast` **To View Module Information**"
-            )
+            await xx.reply("**Usage:** `.help broadcast` **To View Module Information**")
             return
 
     if help_arg:
         if help_arg in CMD_HELP:
             commands: dict = CMD_HELP[help_arg]
-            this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
+            this_command = f"──「 **Help For {help_arg.upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += f"© TigerX"
+            this_command += "© TigerX"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -89,9 +87,7 @@ async def module_helper(client, message):
         await edit_or_reply(
             message, f"```{str(ac)}```\n• © DarkWeb"
         )
-        await message.reply(
-            f"**Usage**:`.help broadcast` **To View Module details**"
-        )
+        await message.reply("**Usage**:`.help broadcast` **To View Module details**")
 
     if help_arg:
         if help_arg in CMD_HELP:
@@ -99,7 +95,7 @@ async def module_helper(client, message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += f" © TigerX"
+            this_command += " © TigerX"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )

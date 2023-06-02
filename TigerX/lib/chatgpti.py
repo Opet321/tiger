@@ -100,7 +100,11 @@ async def new_chatgpt_turbo(client, message):
        return
     url = "https://openai80.p.rapidapi.com/chat/completions"
     payload = {"model": "gpt-3.5-turbo", "messages": [{"role": "user", "content": ask_turbo}]}
-    headers = {"content-type": "application/json", f"X-RapidAPI-Key": RAPI_API_KEY, "X-RapidAPI-Host": "openai80.p.rapidapi.com"}
+    headers = {
+        "content-type": "application/json",
+        "X-RapidAPI-Key": RAPI_API_KEY,
+        "X-RapidAPI-Host": "openai80.p.rapidapi.com",
+    }
     response = requests.request("POST", url, json=payload, headers=headers)
     if response.status_code == 200:
         data_turbo = response.json()

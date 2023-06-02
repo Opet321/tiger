@@ -22,9 +22,18 @@ async def ytp_dl_command(c: Client, m: Message):
 add_command_help(
     "youtube",
     [
-        [f"ytv <link>", "Download Video from YouTube and then upload it to telegram.."],
-        [f"yta <link>", "Download Audio from YouTube and then upload it to telegram.."],
-        [f"ytp <link>", "Download Playlist from YouTube.."],
-        [f"video <query>", "Download Video from YouTube and then upload it to telegram."],
+        [
+            "ytv <link>",
+            "Download Video from YouTube and then upload it to telegram..",
+        ],
+        [
+            "yta <link>",
+            "Download Audio from YouTube and then upload it to telegram..",
+        ],
+        ["ytp <link>", "Download Playlist from YouTube.."],
+        [
+            "video <query>",
+            "Download Video from YouTube and then upload it to telegram.",
+        ],
     ],
 )

@@ -10,6 +10,9 @@ async def toonify_handler(c: Client, m: Message):
 add_command_help(
     "deepai",
     [
-        [f"cartoon or .toonify [reply to image]", "to cartoon image using the deepai api."],
+        [
+            "cartoon or .toonify [reply to image]",
+            "to cartoon image using the deepai api.",
+        ]
     ],
 )

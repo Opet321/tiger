@@ -73,12 +73,11 @@ async def time_length(seconds):
     minutes = seconds // 60
     seconds %= 60
     if hour:
-        time_song = "%d:%02d:%02d" % (hour, minutes, seconds)
+        return "%d:%02d:%02d" % (hour, minutes, seconds)
     elif minutes:
-        time_song = "%02d:%02d" % (minutes, seconds)
+        return "%02d:%02d" % (minutes, seconds)
     else:
-        time_song = "%02d" % (seconds)
-    return time_song
+        return "%02d" % (seconds)
 
 
 async def GetPlaylistInfo(link):
@@ -234,9 +233,7 @@ async def ytp_dl(c, m):
         total_vids = len(entries)
 
         for p in entries:
-            ytp_opts["outtmpl"] = (
-                "/root/TigerX/cache/ytp/" + str(pid) + "/%(title)s.%(ext)s"
-            )  # vid = Playlist ID
+            ytp_opts["outtmpl"] = f"/root/TigerX/cache/ytp/{str(pid)}/%(title)s.%(ext)s"
             try:
                 url = p["webpage_url"]
                 with YoutubeDL(ytp_opts) as ydl:
@@ -247,10 +244,19 @@ async def ytp_dl(c, m):
                 uploader = p["uploader"]
                 duration = await time_length(p["duration"])
                 percentage = (num / total_vids) * 100  # Percentage
-                progress_str = "<b>[{0}{1}]</b>\n<b>Progress:</b> <i>{2}%</i>".format(
-                    "".join(["●" for i in range(math.floor(percentage / 5))]),
-                    "".join(["○" for i in range(20 - math.floor(percentage / 5))]),
-                    round(percentage, 2),
+                progress_str = (
+                    "<b>[{0}{1}]</b>\n<b>Progress:</b> <i>{2}%</i>".format(
+                        "".join(
+                            ["●" for _ in range(math.floor(percentage / 5))]
+                        ),
+                        "".join(
+                            [
+                                "○"
+                                for _ in range(20 - math.floor(percentage / 5))
+                            ]
+                        ),
+                        round(percentage, 2),
+                    )
                 )
                 try:
                     await m.edit_text(
@@ -282,10 +288,7 @@ async def ytp_dl(c, m):
         if not Ers.endswith("Downloading:\n\n"):
             with BytesIO(str.encode(Ers)) as f:
                 f.name = "ytp_errors.txt"
-                await m.reply_document(
-                    document=f,
-                    caption=f"Download Errors!",
-                )
+                await m.reply_document(document=f, caption="Download Errors!")
     return
 
 

@@ -321,11 +321,10 @@ SLAP_LUCU_INDONESIA = [
 
 async def truth_string_str(c, m):
     user = await c.get_users("me")
-    if user:
-        mention_user = user.mention
-        first_name = user.first_name
-    else:
-        return 
+    if not user:
+        return
+    mention_user = user.mention
+    first_name = user.first_name
     truth_random = choice(TRUTH)
     if first_name:
         await m.reply_text(f"{first_name}, {truth_random}")
@@ -336,11 +335,10 @@ async def truth_string_str(c, m):
 
 async def dare_string_str_2(c, m):
     user = await c.get_users("me")
-    if user:
-        mention_user = user.mention
-        first_name = user.first_name
-    else:
-        return 
+    if not user:
+        return
+    mention_user = user.mention
+    first_name = user.first_name
     dare_random = choice(DARE)
     if first_name:
         await m.reply_text(f"{first_name}, {dare_random}")

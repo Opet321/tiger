@@ -10,6 +10,9 @@ async def telegraph_command(client: Client, message: Message):
 add_command_help(
     "telegraph",
     [
-        [f"telegraph or .tg", "Reply to messages or media to upload them to the telegraph."],
+        [
+            "telegraph or .tg",
+            "Reply to messages or media to upload them to the telegraph.",
+        ]
     ],
 )

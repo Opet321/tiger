@@ -88,11 +88,10 @@ async def ungban_user_all(client, message):
         ren = await message.edit("`UnGbanning....`")
     if not user_id:
         return await ren.edit("Saya tidak dapat menemukan pengguna itu.")
-    if user_id:
-        try:
-            user = await client.get_users(user_id)
-        except Exception:
-            return await ren.edit("`Harap tentukan pengguna yang valid!`")
+    try:
+        user = await client.get_users(user_id)
+    except Exception:
+        return await ren.edit("`Harap tentukan pengguna yang valid!`")
 
     try:
         if not sql.is_gbanned(user.id):
@@ -128,9 +127,7 @@ async def gbanlist_all(client, message):
     if not users:
         return await ren.edit("no users have been gbanned yet")
     gban_list = "**GBanned Users:**\n"
-    count = 0
-    for i in users:
-        count += 1
+    for count, i in enumerate(users, start=1):
         gban_list += f"**{count} -** `{i.sender}`\n"
     return await ren.edit(gban_list)
 
@@ -142,13 +139,13 @@ async def gmute_user_all(client, message):
         try:
             user = await client.get_users(args)
         except Exception:
-            await ren.edit(f"`Please specify a valid user!`")
+            await ren.edit("`Please specify a valid user!`")
             return
     elif reply:
         user_id = reply.from_user.id
         user = await client.get_users(user_id)
     else:
-        await ren.edit(f"`Please specify a valid user!`")
+        await ren.edit("`Please specify a valid user!`")
         return
     if user.id == client.me.id:
         return await ren.edit("**what are you doing to yourself lol**")
@@ -185,13 +182,13 @@ async def ungmute_user_all(client, message):
         try:
             user = await client.get_users(args)
         except Exception:
-            await ren.edit(f"`Please specify a valid user!`")
+            await ren.edit("`Please specify a valid user!`")
             return
     elif reply:
         user_id = reply.from_user.id
         user = await client.get_users(user_id)
     else:
-        await ren.edit(f"`Please specify a valid user!`")
+        await ren.edit("`Please specify a valid user!`")
         return
 
     try:
@@ -224,9 +221,7 @@ async def gmutelist_all(client, message):
     if not users:
         return await ren.edit("No users have been muted yet")
     gmute_list = "**GMuted Users:**\n"
-    count = 0
-    for i in users:
-        count += 1
+    for count, i in enumerate(users, start=1):
         gmute_list += f"**{count} -** `{i.sender}`\n"
     return await ren.edit(gmute_list)
 
