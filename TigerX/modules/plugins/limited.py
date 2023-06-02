@@ -8,8 +8,5 @@ async def spamban_command(client: Client, m: Message):
     await spamban(client, m)
 
 add_command_help(
-    "limited",
-    [
-        [f"limit or .limited", "Check Limit telegram from @SpamBot."],
-    ],
+    "limited", [["limit or .limited", "Check Limit telegram from @SpamBot."]]
 )

@@ -30,6 +30,6 @@ add_command_help(
         ["unblock", "to unblock someone on telegram"],
         ["setname", "set your profile name."],
         ["setbio", "set an bio."],
-        ["setpfp", f"reply with image to set your profile pic."],
+        ["setpfp", "reply with image to set your profile pic."],
     ],
 )

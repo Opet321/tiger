@@ -134,7 +134,6 @@ async def api_quotes_new(client, message):
     ran = await message.reply_text("<code>Processing quotes.......</code>")
     api_quotes_url = "https://api.breakingbadquotes.xyz/v1/quotes"
     response = requests.get(api_quotes_url)
-    correct_this_quote = ""
     if response.status_code == 200:
         data_quotes = response.json()
         try:
@@ -144,6 +143,7 @@ async def api_quotes_new(client, message):
              await ran.edit_text(f"Error request {e}")
              return
         if request_quotes and request_author:
+            correct_this_quote = ""
             correct_this_quote += f"<b>Quote:</b> {request_quotes}\n"
             correct_this_quote += f"<b>Author:</b> {request_author}\n"
             await ran.edit_text(correct_this_quote)
@@ -182,7 +182,6 @@ async def api_waifu_main(client, message):
 async def randomuser(client, message):
     ran = await message.reply_text("<code>Processing.......</code>")
     url_random_user = "https://randomuser.me/api"
-    random_results = ""
     response = requests.get(url_random_user)
     if response.status_code == 200:
         data_random = response.json()
@@ -201,6 +200,7 @@ async def randomuser(client, message):
             await ran.edit_text(f"Error request {e}")
             return
         if gender and name and location and email and login and dob and registered and phone and cell and picture:
+            random_results = ""
             random_results += f"<b>Name:</b> {name['title']} {name['first']} {name['last']}\n"
             random_results += f"<b>Gender:</b> {gender}\n"
             random_results += f"<b>Location:</b> {location['street']['number']} {location['street']['name']}, {location['city']}, {location['state']}, {location['country']} {location['postcode']}\n"
@@ -241,7 +241,6 @@ async def hacker_lacak_target(client, message):
     location_key = f"key={apikey}"
     location_search = f"ip={ipddres}"
     location_param = f"{location_link}://{location_api}/?{location_key}&{location_search}"
-    location_target = ""
     response = requests.get(location_param)
     if response.status_code == 200:
         data_location = response.json()
@@ -258,6 +257,7 @@ async def hacker_lacak_target(client, message):
             await ran.edit_text(f"Error request {e}")
             return
         if location_ip and location_code and location_name and location_region and location_city and location_zip and location_zone and location_card:
+            location_target = ""
             location_target += f"<b>IP Address:</b> {location_ip}\n"
             location_target += f"<b>Country code:</b> {location_code}\n"
             location_target += f"<b>Country name:</b> {location_name}\n"
@@ -342,7 +342,6 @@ async def api_movie_info(client, message):
         return
     type = search
     apikey = "212089e4" # don't share this by @xtsea 
-    search_text = ""
     api_url = f"http://www.omdbapi.com/?apikey={apikey}&s={type}" # parameter check : http://www.omdbapi.com/
     response = requests.get(api_url)
     if response.status_code == 200:
@@ -357,6 +356,7 @@ async def api_movie_info(client, message):
             await ran.edit_text(f"Error request {e}")
             return
         if search_title and year_movie and imdb_code and movies and image_movie_url:
+            search_text = ""
             search_text += f"<b>Film title :</b> {search_title}\n"
             search_text += f"<b>Year :</b> {year_movie}\n"
             search_text += f"<b>Imdb ID :</b> {imdb_code}\n"

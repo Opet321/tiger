@@ -26,10 +26,19 @@ async def memify_command(client: Client, message: Message):
 add_command_help(
     "sticker",
     [
-        [f"kang `reply` image", "Reply .kang To Sticker Or Image To Add To Sticker Pack."],
-        [f"kang [emoji] `or` .double [emoji]", "To add and custom emoji stickers to your sticker pack."],
-        [f"packinfo `or` .stickerinfo", "To Get Sticker Pack Information."],
-        [f"mtoi [reply ke sticker] or .getsticker [reply ke sticker]", "Reply to sticker to get sticker photo."],
+        [
+            "kang `reply` image",
+            "Reply .kang To Sticker Or Image To Add To Sticker Pack.",
+        ],
+        [
+            "kang [emoji] `or` .double [emoji]",
+            "To add and custom emoji stickers to your sticker pack.",
+        ],
+        ["packinfo `or` .stickerinfo", "To Get Sticker Pack Information."],
+        [
+            "mtoi [reply ke sticker] or .getsticker [reply ke sticker]",
+            "Reply to sticker to get sticker photo.",
+        ],
         ["stickers [nama sticker]", "To find sticker packs."],
     ],
 )
@@ -38,16 +47,17 @@ add_command_help(
 add_command_help(
     "memify",
     [
-        [f"mmf Top Text ; Bottom Text", "Reply To Message Sticker or Photo will be Converted to the specified meme text sticker."],
+        [
+            "mmf Top Text ; Bottom Text",
+            "Reply To Message Sticker or Photo will be Converted to the specified meme text sticker.",
+        ]
     ],
 )
 
 
 add_command_help(
     "tiny",
-    [
-        [f"tiny [reply ke photo/sticker]", "To Change the Sticker to be Small."],
-    ],
+    [["tiny [reply ke photo/sticker]", "To Change the Sticker to be Small."]],
 )
 
 

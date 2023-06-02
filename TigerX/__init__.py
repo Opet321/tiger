@@ -23,11 +23,7 @@ ids = []
 
 aiosession = ClientSession()
 
-TEMP_SETTINGS: Dict[Any, Any] = {}
-TEMP_SETTINGS["PM_COUNT"] = {}
-TEMP_SETTINGS["PM_LAST_MSG"] = {}
-
-
+TEMP_SETTINGS: Dict[Any, Any] = {"PM_COUNT": {}, "PM_LAST_MSG": {}}
 LOG_FILE_NAME = "logs.txt"
 logging.basicConfig(
     level=logging.INFO,

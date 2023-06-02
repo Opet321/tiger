@@ -40,7 +40,6 @@ def gban(sender):
 
 
 def ungban(sender):
-    rem = SESSION.query(GBan).get((str(sender)))
-    if rem:
+    if rem := SESSION.query(GBan).get((str(sender))):
         SESSION.delete(rem)
         SESSION.commit()

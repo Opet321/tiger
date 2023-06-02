@@ -60,7 +60,7 @@ async def facebook_downloader(client, message):
         else:
             await ran.edit_text("Error please try again facebook")
     else:
-        await ran.edit_text(f"Failed to api facebook")
+        await ran.edit_text("Failed to api facebook")
     try:
         await ran.delete()
     except Exception:

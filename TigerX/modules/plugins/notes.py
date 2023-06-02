@@ -24,9 +24,9 @@ async def get_notes_command(client: Client, message: Message):
 add_command_help(
     "notes",
     [
-        [f"save [name and reply to message]", "to save notes"],
-        [f"get [name]", "to call notes"],
-        [f"delete [name]", "to delete a note"],
-        [f"notes", "to display a list of notes"],
+        ["save [name and reply to message]", "to save notes"],
+        ["get [name]", "to call notes"],
+        ["delete [name]", "to delete a note"],
+        ["notes", "to display a list of notes"],
     ],
 )

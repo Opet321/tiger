@@ -40,5 +40,4 @@ async def ass_copy_link(client, message):
                 anak_bocah_coding = memekontol()
                 await client.copy_message(SAVE_CONTENT, from_chat_id=chat_id, message_id=message_id, caption=None, reply_markup=anak_bocah_coding)
             except Exception:
-                pass
                 return

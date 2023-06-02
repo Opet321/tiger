@@ -22,9 +22,21 @@ async def gucast_command(client: Client, message: Message):
 add_command_help(
     "broadcast",
     [
-        [f"gcast [text/reply]", "Sending Global Broadcast messages to all groups you are logged into. (Can Send Media/Sticker)"],
-        [f"gforward [reply]", "Sending Global Broadcast message to all group forwarded messages"],
-        [f"guforward [reply]", "Sending Global Broadcast messages to all incoming Private Massages Forward"],
-        [f"gucast [text/reply]", "Sending Global Broadcast messages to all incoming Private Massages / PCs. (Can Send Media/Sticker)"],
+        [
+            "gcast [text/reply]",
+            "Sending Global Broadcast messages to all groups you are logged into. (Can Send Media/Sticker)",
+        ],
+        [
+            "gforward [reply]",
+            "Sending Global Broadcast message to all group forwarded messages",
+        ],
+        [
+            "guforward [reply]",
+            "Sending Global Broadcast messages to all incoming Private Massages Forward",
+        ],
+        [
+            "gucast [text/reply]",
+            "Sending Global Broadcast messages to all incoming Private Massages / PCs. (Can Send Media/Sticker)",
+        ],
     ],
 )

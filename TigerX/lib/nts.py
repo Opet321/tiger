@@ -24,10 +24,8 @@ async def remove_notes(client, message):
     notename = get_arg(message)
     user_id = message.from_user.id
     if rm_note(str(user_id), notename) is False:
-        return await message.reply(
-            "Couldn't find the record: {}".format(notename)
-        )
-    return await message.reply("Successfully deleted the notes: {}".format(notename))
+        return await message.reply(f"Couldn't find the record: {notename}")
+    return await message.reply(f"Successfully deleted the notes: {notename}")
 
 async def save_note(client, message):
     keyword = get_arg(message)

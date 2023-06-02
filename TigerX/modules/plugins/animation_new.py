@@ -60,7 +60,7 @@ add_command_help(
         ["police", "usage: "],
         ["linux", "usage: "],
         ["hack", "usage: "],
-        [f"kontol or .dick ", "usage: "],
+        ["kontol or .dick ", "usage: "],
         ["bye", "usage: prank left"],
         ["suicide", "usage: "],
         ["snake", "usage: "],

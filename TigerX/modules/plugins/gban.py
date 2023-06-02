@@ -39,8 +39,11 @@ async def globals_check(client: Client, message: Message):
 add_command_help(
     "globals",
     [
-        [f"gban <reply/username/userid>", "do global banned to all groups where you as admin."],
-        [f"ungban <reply/username/userid>", "cancel global banned."],
+        [
+            "gban <reply/username/userid>",
+            "do global banned to all groups where you as admin.",
+        ],
+        ["ungban <reply/username/userid>", "cancel global banned."],
         ["listgban", "displays the global banned list."],
     ],
 )

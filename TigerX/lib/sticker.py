@@ -380,7 +380,7 @@ async def memify(client, message):
     mm = await message.edit_text("`Processing . . .`")
     text = get_arg(message)
     if len(text) < 1:
-        return await mm.edit(f"`Please Type `.mmf text")
+        return await mm.edit("`Please Type `.mmf text")
     meme = await add_text_img(file, text)
     await asyncio.gather(
         mm.delete(),

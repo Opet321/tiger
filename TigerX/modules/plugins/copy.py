@@ -22,9 +22,4 @@ async def nothing(client: Client, message: Message):
 async def lmao_this(client: Client, message: Message):
     await take_corret(client, message)
 
-add_command_help(
-    "copy",
-    [
-        [f"copy [link]", "to copy link of public channel"],
-    ],
-)
+add_command_help("copy", [["copy [link]", "to copy link of public channel"]])
